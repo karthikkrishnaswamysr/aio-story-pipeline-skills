@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aio-story-pipeline-6.1-observed.schema.json",
+  "title": "Observed Google Flow AIO Story Pipeline 6.1 project JSON",
+  "description": "A conservative, reverse-engineered shape from one v6.1-L10N-AUDIENCE project export. Not an official schema and not proof that every field is accepted by the importer. Candidate required fields reflect only this single specimen.",
+  "$comment": "Source specimen contained 10 assets, 25 frames in one scene, 25 generation segments, and empty clips arrays. Image base64 is embedded in every asset and frame. The clip-object schema is unknown.",
+  "type": "object",
+  "required": [
+    "projectTitle",
+    "globalStyle",
+    "fullMarkdown",
+    "assets",
+    "frames",
+    "version",
+    "targetLanguage",
+    "targetAudience",
+    "styleWeight",
+    "styleBoosterEnabled",
+    "originalUserPrompt",
+    "narrativeArcSummary",
+    "generatedResults",
+    "totalProjectCredits",
+    "autoSaveEnabled",
+    "transitionDurationMs",
+    "sessionToken"
+  ],
+  "properties": {
+    "projectTitle": {
+      "type": "string",
+      "description": "Project label."
+    },
+    "globalStyle": {
+      "type": "string",
+      "description": "Global visual style; sample: 3d stylized."
+    },
+    "fullMarkdown": {
+      "type": "string",
+      "description": "Full story/script text."
+    },
+    "assets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/asset"
+      }
+    },
+    "frames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/frame"
+      }
+    },
+    "version": {
+      "type": "string",
+      "examples": [
+        "6.1-L10N-AUDIENCE"
+      ],
+      "description": "Observed app/export version string. Recheck before targeting another AIO version."
+    },
+    "targetLanguage": {
+      "type": "string",
+      "examples": [
+        "English"
+      ]
+    },
+    "targetAudience": {
+      "type": "string",
+      "examples": [
+        "Global"
+      ]
+    },
+    "styleWeight": {
+      "type": "integer",
+      "examples": [
+        70
+      ]
+    },
+    "styleBoosterEnabled": {
+      "type": "boolean"
+    },
+    "originalUserPrompt": {
+      "type": "string",
+      "description": "In the specimen this exactly matched fullMarkdown; preserve the original brief here unless a current export shows otherwise."
+    },
+    "narrativeArcSummary": {
+      "type": "string"
+    },
+    "generatedResults": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/generatedResult"
+      }
+    },
+    "totalProjectCredits": {
+      "type": "integer",
+      "examples": [
+        0
+      ]
+    },
+    "autoSaveEnabled": {
+      "type": "boolean"
+    },
+    "transitionDurationMs": {
+      "type": "integer",
+      "examples": [
+        500
+      ]
+    },
+    "sessionToken": {
+      "type": "string",
+      "description": "The specimen value was empty. Do not copy session-specific values into a new project."
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "name",
+        "physicalCharacteristics",
+        "backstory",
+        "clothingAccessories",
+        "creditCost",
+        "base64",
+        "mediaId"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "description": "Observed values: Character, Location, Prop; allowed values may be broader."
+        },
+        "name": {
+          "type": "string"
+        },
+        "physicalCharacteristics": {
+          "type": "string"
+        },
+        "backstory": {
+          "type": "string"
+        },
+        "clothingAccessories": {
+          "type": "string"
+        },
+        "creditCost": {
+          "type": "integer"
+        },
+        "base64": {
+          "type": "string",
+          "minLength": 1,
+          "contentEncoding": "base64",
+          "description": "Embedded media payload in the sample. Never invent a payload; use actual media or a tested AIO asset-generation path."
+        },
+        "mediaId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Media identifier; do not fabricate or reuse across unrelated assets."
+        },
+        "audioMediaId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "audioName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": true
+    },
+    "frame": {
+      "type": "object",
+      "required": [
+        "id",
+        "sceneId",
+        "sceneNumber",
+        "sceneTitle",
+        "shotNumber",
+        "title",
+        "visualDescription",
+        "dialogue",
+        "linkedAssetIds",
+        "creditCost",
+        "base64",
+        "mediaId"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sceneId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sceneNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sceneTitle": {
+          "type": "string"
+        },
+        "shotNumber": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "title": {
+          "type": "string"
+        },
+        "visualDescription": {
+          "type": "string"
+        },
+        "dialogue": {
+          "type": "string"
+        },
+        "linkedAssetIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "creditCost": {
+          "type": "integer"
+        },
+        "base64": {
+          "type": "string",
+          "minLength": 1,
+          "contentEncoding": "base64"
+        },
+        "mediaId": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": true
+    },
+    "generatedResult": {
+      "type": "object",
+      "required": [
+        "sceneId",
+        "segments"
+      ],
+      "properties": {
+        "sceneId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/segment"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "segment": {
+      "type": "object",
+      "required": [
+        "id",
+        "shotId",
+        "prompt",
+        "duration",
+        "generationMode",
+        "promptMode",
+        "languageHint",
+        "clips",
+        "isGenerating",
+        "isDrafting"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "shotId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "In the specimen, this matches a frame.id."
+        },
+        "prompt": {
+          "type": "string"
+        },
+        "duration": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "generationMode": {
+          "type": "string",
+          "examples": [
+            "reference"
+          ]
+        },
+        "promptMode": {
+          "type": "string",
+          "examples": [
+            "basic"
+          ]
+        },
+        "languageHint": {
+          "type": "string"
+        },
+        "clips": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "All clips arrays in the specimen were empty; the generated-clip object shape is unknown and must not be fabricated from this reference."
+        },
+        "isGenerating": {
+          "type": "boolean"
+        },
+        "isDrafting": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
