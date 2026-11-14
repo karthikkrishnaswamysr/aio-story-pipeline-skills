@@ -1,0 +1,14 @@
+interface:
+  display_name: Google Flow Stickman & Blocky Videos
+  short_description: Create stickman or blocky clips in your attached Flow tab
+  default_prompt: Use $flow-stickman-blocky to plan a short film from my story idea
+    in my attached Google Flow tab.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true

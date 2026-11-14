@@ -12,7 +12,16 @@ Four separate skill bundles for using the Google Flow AIO Story Pipeline with Co
 The unpacked versions are in `codex/`, `claude/`, `gemini/`, and `chatgpt/` for inspection or direct installation.
 Maintainers can rebuild the labeled ZIPs with `python package_skills.py`.
 
-## Install
+## Google Flow Stickman & Blocky Videos (ChatGPT)
+
+A separate ChatGPT skill: ChatGPT drives your attached Google Flow tab with Browser Use. It builds reusable characters and voices, plans a short stickman or blocky-avatar film, quotes credits, generates and reviews each shot, and redoes single shots.
+
+- [Download the skill ZIP](releases/flow-stickman-blocky-chatgpt.zip)
+- Unpacked: [`chatgpt/flow-stickman-blocky/`](chatgpt/flow-stickman-blocky/)
+
+Install: if Skills are enabled for your workspace, open **Plugins → Skills → Create → Upload from your computer**, choose `flow-stickman-blocky-chatgpt.zip`, and enable it. Then open your Google Flow project in a tab attached to ChatGPT's Browser Use and ask it to use `flow-stickman-blocky`. Availability depends on your plan and workspace settings.
+
+## Install (AIO Story Pipeline)
 
 ### Codex
 
