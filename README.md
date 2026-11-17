@@ -45,6 +45,26 @@ After I approve: switch to Video, Frames, 360p, 6 s, x1, tell me the credit cost
 Never type into a clip's edit box (URL with /edit/) — that edits the clip and costs credits.
 ```
 
+## Google Flow with browser-use (Claude Code): code film to Flow
+
+The skill from TechGyro's "Claude Code animation -> Google Flow" video. Claude Code drives your own signed-in Chrome over
+remote debugging with the `browser-use` CLI: it uploads the first and last frames of a code-built film, restyles each into
+a cinematic still with Nano Banana (free), then turns each shot into a Frames clip on Omni, reading the credit cost and
+asking before every clip. It includes the fixes for Flow's "unusual activity" block and the frame/clip-length lessons.
+
+- [Download the skill ZIP](releases/flow-browser-use-claude-code.zip)
+- Unpacked: [`claude/flow-browser-use/`](claude/flow-browser-use/)
+
+Install: `uv tool install browser-use==1.0.4`, then unzip and copy `flow-browser-use/` to `~/.claude/skills/`.
+
+1. In Chrome, open `chrome://inspect/#remote-debugging` and turn remote debugging on.
+2. Open your Google Flow project in that Chrome.
+3. In Claude Code: "Here's my Flow project [URL]. Remote debugging is on. Use the flow-browser-use skill. Restyle the first
+   and last frame of each shot into a cinematic still, then make each shot a clip with Frames. Test one shot at 360p
+   first, and ask me before every clip. Budget: 200 credits."
+
+Turn remote debugging off when you're done.
+
 ## Install (AIO Story Pipeline)
 
 ### Codex
