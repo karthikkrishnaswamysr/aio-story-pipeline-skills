@@ -21,6 +21,30 @@ A separate ChatGPT skill: ChatGPT drives your attached Google Flow tab with Brow
 
 Install: if Skills are enabled for your workspace, open **Plugins → Skills → Create → Upload from your computer**, choose `flow-stickman-blocky-chatgpt.zip`, and enable it. Then open your Google Flow project in a tab attached to ChatGPT's Browser Use and ask it to use `flow-stickman-blocky`. Availability depends on your plan and workspace settings.
 
+## Google Flow with Claude Code (terminal)
+
+A Claude Code skill: Claude works inside your own, already-open Google Flow project in Chrome. It plans a short story video, makes the reference and start-frame images first (free), reads the credit cost and asks before every paid clip, reviews each shot and redoes only the ones that fail.
+
+- [Download the skill ZIP](releases/google-flow-claude-code.zip)
+- Unpacked: [`claude/google-flow-claude-code/`](claude/google-flow-claude-code/)
+
+Install: unzip and copy `google-flow-claude-code/` to `~/.claude/skills/` (user) or `.claude/skills/` in your project. Then:
+
+1. In Chrome, open `chrome://inspect/#remote-debugging` and turn remote debugging on (click Allow if Chrome asks).
+2. Open your Google Flow project in that Chrome.
+3. In Claude Code: "Use google-flow-claude-code. Remote debugging is on. Find my Flow project and tell me my credits."
+
+Turn remote debugging off when you're done: while it's on, local programs can control that Chrome window.
+
+**Using the Claude in Chrome extension instead?** No skill needed. Open the Claude side panel next to your Flow project and paste a prompt like:
+
+```text
+You're working in my open Google Flow project. Plan a short silent film from this storyline: [your storyline]. 6 shots of 6 seconds, 16:9. For each shot give a start-frame image, a motion prompt and the sound, then stop and wait for my OK.
+After OK: make the start frames in Image mode (check it says 0 credits), using my character and location images as references, and show them to me.
+After I approve: switch to Video, Frames, 360p, 6 s, x1, tell me the credit cost and wait for "go". Make one shot first, then the rest one at a time.
+Never type into a clip's edit box (URL with /edit/) — that edits the clip and costs credits.
+```
+
 ## Install (AIO Story Pipeline)
 
 ### Codex
