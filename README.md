@@ -65,6 +65,28 @@ Install: `uv tool install browser-use==1.0.4`, then unzip and copy `flow-browser
 
 Turn remote debugging off when you're done.
 
+## Google Flow Tools Manager (userscript)
+
+A browser userscript for Google Flow's **Tools** page (My Tools, Community, Templates). If you build tools in Flow, every
+version of every tool shows up as its own card. This turns the page into one entry per tool, with all its versions grouped
+underneath (latest first). It only changes how the page looks in your own browser: it doesn't send data anywhere,
+and settings (stars, view, filters) are saved locally.
+
+- **List and Cards views**, a search box (press `/`), **All / Mine / Shared** filters, sorting by **Recent / A–Z / Most versions**
+- **Latest only**, **Hide remixes**, **Collapse all**, and a live count of tools and builds
+- **Hover** a tool to see its versions; **expand** to list them all; **star** tools to pin them to the top
+- Flow's own **Open, Edit, Remix and Share** on every row
+
+[Install / download `flow-tools-manager.user.js`](https://github.com/karthikkrishnaswamysr/aio-story-pipeline-skills/raw/main/userscripts/flow-tools-manager.user.js)
+
+Install:
+1. Add a userscript manager to your browser: [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/). In Chrome, also turn on **Allow user scripts** for the extension (chrome://extensions → the extension's Details).
+2. Click the install link above; the manager opens an install page. Click **Install**.
+3. Open Google Flow → **Tools**. The manager appears at the top of the page. Updates arrive automatically from this repo.
+
+Unofficial; not made or endorsed by Google. Flow's page can change at any time, which may break the script until it's updated.
+Questions or feature requests: Telegram [@TechGyro](https://t.me/TechGyro).
+
 ## Install (AIO Story Pipeline)
 
 ### Codex
